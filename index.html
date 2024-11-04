@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivano's Birthday Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <h1>Ivano’s turning 22!</h1>
+            <button onclick="openMainContent()">Open</button>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+        <source src="bday_song.mp3" type="audio/mp3"> 
+    </audio>
+
+    <!-- Main Content -->
+    <section class="section1">
+        <div class="main-title">
+            <h1>HAPPY BIRTHDAY</h1>
+            <h1>IVANO IBRAHIM!</h1>
+        </div>
+        <div class="subtitles">
+            <p>🎂✨Let’s make this day as fabulous as you are!</p>
+            <p>🎊💖 Here’s to celebrating you today and all the incredible memories we’ll create together!</p>
+            <p>🎈🎉May your year be filled with adventure, love, and endless happiness!</p>
+        </div>
+    </section>
+    
+    <section class="section2">
+      <div class="overlay"></div>
+      <div id="countdown">
+          <h1>Countdown to Birthday 🎉</h1>
+          <p id="timer"></p>
+      </div>
+      <div id="age-message" style="display: none;">
+          <h1>🎮 Ivano has leveled up! 🎮</h1>
+          <p id="time-left"></p>
+      </div>
+  </section>
+
+    <section class="section3">
+        <div class="overlay"></div>
+        <div class="content trivia">
+            <h1>🎉 Fun Trivia about Ivano!</h1>
+            <div class="trivia"></div>
+              <div class="subtitles"></div>
+              <p>What is Ivano's favorite color?</p>
+                <button onclick="checkAnswer(false)">Red</button>
+                <button onclick="checkAnswer(true)">Blue</button>
+                <button onclick="checkAnswer(false)">Green</button>
+                <button onclick="checkAnswer(false)">Yellow</button>
+        
+              <p> Do you know one of his capabilities is?</p>
+                <button onclick="checkAnswer(false)">Fixing Cars</button>
+                <button onclick="checkAnswer(false)">Singing</button>
+                <button onclick="checkAnswer(false)">Photography</button>
+                <button onclick="checkAnswer(true)">Cooking</button>
+        
+              <p>Who is Ivano's favorite superhero?</p>
+                <button onclick="checkAnswer(false)">Batman</button>
+                <button onclick="checkAnswer(true)">Iron Man</button>
+                <button onclick="checkAnswer(false)">Superman</button>
+                <button onclick="checkAnswer(false)">Spider-Man</button>
+              <p id="quiz-result"></p>
+            </div>
+            
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="section4">
+      <div class="overlay"></div>
+      <div class="content highlight-section">
+          <h1>🎉 Get To Know Ivano</h1>
+          <p>
+              Dive into the world of Ivano! From his unforgettable birthday moments to his caring nature and passion for cars, this section is all about what makes Ivano special. Whether it's sharing fun trivia or learning about his unique personality, get ready to discover the incredible qualities that define Ivano! 🌟❤️
+          </p>
+          <div class="highlight-buttons">
+              <button onclick="showHighlights1()">Funny Birthday Moment</button>
+              <button onclick="showHighlights2()">Friendship Vibes</button>
+              <button onclick="showHighlights3()">Car Enthusiast</button>
+          </div>
+      </div>
+  </section>
+  
+
+    <section class="section5">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Moments to Cherish!📸</h1>
+            <div class="gallery-container">
+                <div class="gallery-slider">
+                    <img src="photo1.JPG" alt="Photo 1">
+                    <img src="photo2.HEIC" alt="Photo 2">
+                    <img src="photo3.JPG" alt="Photo 3">
+                    <img src="photo4.JPG" alt="Photo 4">
+                    <img src="photo5.JPG" alt="Photo 5">
+                    <img src="photo6.HEIC" alt="Photo 6">
+                    <img src="photo7.JPG" alt="Photo 7">
+                    <img src="photo8.heic" alt="Photo 8">
+                    <img src="photo9.heic" alt="Photo 9">
+                    <img src="photo10.jpeg" alt="Photo 10">
+                </div>
+                <div class="gallery-slider">
+                  <img src="photo11.jpeg" alt="Photo 11">
+                  <img src="photo12.jpeg" alt="Photo 12">
+                  <img src="photo13.jpeg" alt="Photo 13">
+                  <img src="photo14.jpeg" alt="Photo 14">
+                  <img src="photo15.jpeg" alt="Photo 15">
+                  <img src="photo16.jpeg" alt="Photo 16">
+                  <img src="photo17.jpeg" alt="Photo 17">
+                  <img src="photo18.jpeg" alt="Photo 18">
+                  <img src="photo19.jpeg" alt="Photo 19">
+                  <img src="photo20.jpeg" alt="Photo 20">
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wishes">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>💌 Leave a Wish for Ivano!</h1>
+            <textarea id="wishInput" placeholder="Write your wish here..."></textarea>
+            <button onclick="sendWish()">Send Wish</button>
+            <div id="wishesDisplay" class="display-wishes">
+                <!-- Wishes will be displayed here -->
+            </div>
+        </div>
+    </section>
+
+  <footer>
+      <p>Made with ❤️ for Ivano!</p>
+  </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

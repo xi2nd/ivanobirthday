@@ -1,0 +1,468 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    font-family: 'Georgia', serif;
+    font-size: 40px; /* Ukuran font berbeda */
+    color: white; /* Warna berbeda */
+    text-align: center;
+    margin-bottom: 40px;
+}
+section {
+    scroll-snap-align: start;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+p {
+    font-family: 'Trebuchet MS', Courier, monospace; /* Jenis font untuk subtitle */
+    font-size: 18px; /* Ukuran font untuk subtitle */
+    color: #FFD700; /* Warna untuk subtitle */
+}
+
+/* Overlay Effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Splash Screen */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.splash-content {
+    color: white;
+    text-align: center;
+}
+
+.splash-content h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.splash-content button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.main-title {
+    font-size: 60px; /* Ukuran judul */
+    color: #800000(0,0,0,0.6); /* Warna judul */
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    font-size: 20px; /* Ukuran subjudul */
+    opacity: 0; /* Sembunyikan subjudul awalnya */
+    transition: opacity 1s ease; /* Transisi opacity */
+}
+
+.text-item {
+    display: none; /* Sembunyikan semua item teks */
+}
+
+/* Untuk efek munculnya teks satu per satu */
+.text-item.show {
+    display: block; /* Tampilkan teks */
+    opacity: 1; /* Tampilkan teks dengan opacity penuh */
+}
+
+.section1 {
+    background-image: url('bg2.jpg'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.section2 {
+    background-image: url('bg1.JPG'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.section3 {
+    background-image: url('bg3.heic'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.section4 {
+    background-image: url('bg4.JPG'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.section5 {
+    background-image: url('bg6.jpg'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.section6 {
+    background-image: url('bg5.heic'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.wishes {
+    background-image: url('bg5.heic'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+/* Animated Text in Section 1 */
+.animated-text {
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Trivia Section */
+
+.trivia section {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid #FFD700; /* Gold border for extra flair */
+}
+.trivia .quiz-question {
+    border: 2px solid white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.trivia button {
+    padding: 12px 24px; /* Memperbesar padding tombol */
+    font-size: 18px; /* Ukuran font untuk tombol */
+    font-family: 'Trebuchet MS', Courier, monospace;
+    cursor: pointer;
+    background-color: #FFD700; /* Warna latar belakang tombol */
+    color: #800000; /* Warna teks tombol */
+    border: none; /* Tanpa border */
+    border-radius: 5px; /* Sudut yang membulat */
+    margin-top: 10px; /* Jarak atas tombol */
+}
+
+/* Highlight Section */
+.highlight-section {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid #FFD700; /* Gold border for extra flair */
+}
+
+.highlight button {
+    padding: 12px 24px; /* Ukuran tombol */
+    background: linear-gradient(to right, #FFD700, #FFC300); /* Gradien warna */
+    color: #800000; /* Warna teks */
+    border: none;
+    border-radius: 5px; /* Sudut membulat */
+    cursor: pointer;
+    font-size: 18px; /* Ukuran font */
+    font-weight: bold; /* Tebal */
+    transition: background 0.3s ease, transform 0.3s ease; /* Transisi saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+}
+
+.highlight button:hover {
+    background: linear-gradient(to right, #FFC300, #FFD700); /* Efek saat hover */
+    transform: scale(1.05); /* Perbesar sedikit saat hover */
+}
+
+
+/* Gallery Section */
+
+
+#gallery {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid #FFD700; /* Gold border for extra flair */
+}
+
+/* Gallery styles */
+.gallery-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 80vw; /* Sesuaikan dengan ukuran yang lebih kecil */
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.gallery-slider {
+    display: flex;
+    width: calc(200px * 10); /* Sesuaikan dengan ukuran lebih kecil */
+    animation: scroll 60s linear infinite;
+    margin-bottom: 20px; /* Jarak antara slider atas dan bawah */
+}
+
+.gallery-slider img {
+    width: 200px; /* Ukuran gambar lebih kecil */
+    height: auto;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-200px * 5)); } /* Atur sampai gambar tengah */
+}
+
+/* Wishes section styles */
+.wishes {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid #FFD700; /* Gold border for extra flair */
+}
+
+.wishes textarea {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #FFD700;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFD700;
+    font-size: 20px;
+    resize: none; /* Disable resizing */
+}
+
+.wishes button {
+    background-color: #FFD700;
+    color: #800000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 30px; /* Ukuran font lebih besar */
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px; /* Buat sudut tombol lebih membulat */
+    transition: background 0.3s ease; /* Tambah efek transisi */
+}
+
+.wishes button:hover {
+    background-color: #FFC300; /* Efek saat hover */
+}
+
+/* Display Wishes */
+.display-wishes {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFD700;
+    max-height: 300px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.display-wishes p {
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #FFD700;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    font-family: Arial, sans-serif;
+    overflow-y: scroll;
+}
+
+section {
+    scroll-snap-align: start;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    position: relative;
+}
+
+.section1, .section2, .section3, .section4, .section5, .section6, .wishes {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.main-title {
+    font-size: 60px; /* Ukuran judul */
+    color: #800000; /* Warna judul */
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    font-size: 20px; /* Ukuran subjudul */
+    opacity: 0; /* Sembunyikan subjudul awalnya */
+    transition: opacity 1s ease; /* Transisi opacity */
+}
+
+.text-item {
+    display: none; /* Sembunyikan semua item teks */
+}
+
+/* Untuk efek munculnya teks satu per satu */
+.text-item.show {
+    display: block; /* Tampilkan teks */
+    opacity: 1; /* Tampilkan teks dengan opacity penuh */
+}
+
+.section1 {
+    background-image: url('bg2.jpg'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.section2 {
+    background-image: url('bg1.JPG'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.section3 {
+    background-image: url('bg3.heic'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.section4 {
+    background-image: url('bg4.JPG'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.section5 {
+    background-image: url('bg6.jpg'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.section6 {
+    background-image: url('bg5.heic'); /* Ganti dengan gambar lo */
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+#section3 {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid #FFD700; /* Gold border for extra flair */
+}
+
+.section4 {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid #FFD700; /* Gold border for extra flair */
+}
+
+#countdown {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 40px;
+    border-radius: 10px;
+    z-index: 10;
+}
+#timer {
+    font-size: 1.8em;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* Age Message Section */
+#age-message {
+    text-align: center; /* Pusatkan teks */
+    padding: 20px; /* Tambahkan padding */
+    background-color: rgba(255, 255, 255, 0.2); /* Latar belakang lebih gelap */
+    border: 2px solid #FFD700; /* Gold border for extra flair */
+    border-radius: 10px; /* Sudut membulat */
+    color: #800000; /* Warna teks */
+    font-size: 2em; /* Ukuran font lebih besar */
+    max-width: 600px; /* Batas lebar maksimum kotak */
+    margin: 20px auto; /* Pusatkan kotak di halaman dan beri jarak atas-bawah */
+    z-index: 10; /* Bawa kotak ke depan */
+}
+
+#age-message h1 {
+    font-size: 30px; /* Ukuran font untuk judul */
+    margin: 20px 0; /* Jarak di atas dan bawah judul */
+}
+
+#age-message p {
+    margin: 10px 0; /* Jarak di atas dan bawah paragraf */
+}
+
+footer {
+    text-align: center; /* Pusatkan teks */
+    padding: 5px; /* Padding lebih kecil supaya gak ganggu */
+    background-color: rgba(128, 0, 0, 0.8); /* Latar belakang lebih gelap dengan opacity */
+    color: #FFD700; /* Warna teks */
+    font-size: 10px; /* Ukuran font */
+    position: relative; /* Posisi footer */
+    margin-top: 5px; /* Jarak dari section 5 */
+    width: 100%; /* Lebar penuh */
+    z-index: 1; 
+}
